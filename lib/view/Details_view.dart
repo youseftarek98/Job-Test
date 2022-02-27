@@ -107,7 +107,7 @@ class ProductTile extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  " ${product.brand.toString()}",
+                                  "ID Number ${product.id.toString()}",
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FontStyle.italic,
@@ -130,7 +130,7 @@ class ProductTile extends StatelessWidget {
                                       ),
                                     ),
                                     const Icon(
-                                      Icons.perm_identity_rounded,
+                                      Icons.person,
                                       color: Colors.black,
                                     )
                                   ],
@@ -152,7 +152,7 @@ class ProductTile extends StatelessWidget {
                                       overflow: TextOverflow.ellipsis,
                                       style: const TextStyle(
                                         fontStyle: FontStyle.italic,
-                                        fontSize: 17,
+                                        fontSize: 16,
                                       ),
                                     ),
                                   )),
