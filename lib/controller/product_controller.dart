@@ -1,25 +1,28 @@
-import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
 import 'package:test_one/model/product_data_list.dart';
+import 'package:test_one/serv/remote_services.dart';
 
-class ProductsController extends GetxController {
-  ProductsRepository productsRepository = ProductsRepository();
-  RxBool loading = false.obs;
-  List products = [].obs;
-  var showGrid = false.obs;
 
-  ProductsController() {
-    loadProductsFromRepo();
+
+class ProductController extends GetxController {
+  var isLoading = true.obs;
+  var productList = List<Product>().obs;
+
+  @override
+  void onInit() {
+    fetchProducts();
+    super.onInit();
   }
 
-  /// chek online from the api
-
-  loadProductsFromRepo() async {
-    loading(true);
-    products = await productsRepository.loadProductsFromApi();
-    loading(false);
-  }
-
-  toggleGrid() {
-    showGrid(!showGrid.value);
+  void fetchProducts() async {
+    try {
+      isLoading(true);
+      var products = await RemoteServices.fetchProducts();
+      if (products != null) {
+        productList.value = products;
+      }
+    } finally {
+      isLoading(false);
+    }
   }
 }
