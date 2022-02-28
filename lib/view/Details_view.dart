@@ -114,7 +114,7 @@ class ProductTile extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  "\$${product.price.toString()}",
+                                  "\$ ${product.price.toString()}",
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FontStyle.italic,

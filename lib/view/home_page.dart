@@ -106,9 +106,11 @@ class HomePage extends StatelessWidget {
                           //offset: Offset(-2 , -1)
                         )
                       ]),
-                  child: TextFormField(
+                  child:
+                  TextFormField(
                     decoration: const InputDecoration(
                         border: InputBorder.none,
+                        hintText: 'Search product',
                         prefixIcon: Icon(
                           Icons.search,
                           color: Colors.black,
@@ -118,6 +120,9 @@ class HomePage extends StatelessWidget {
                           color: Colors.black,
                         )),
                   ),
+                  
+                  
+
                 ) ,
                 Container(
                   margin: const EdgeInsets.only(left: 25, top: 170, right: 25),
